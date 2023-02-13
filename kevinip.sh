@@ -1,0 +1,91 @@
+#!/bin/bash
+#proyecto KevinIP de : Krypton
+
+banner() {
+                                                                      
+echo -e "\e[1;32m xxxxxxxx  xxxxxxxx  xxxxxxxx  x      x  xxxxxxxx  x       x "
+echo -e "\e[1;32m x         x      x  x      x  x      x  x          x     x  "
+echo -e "\e[1;32m x         x      x  x      x  x      x  x           x   x   "
+echo -e "\e[1;32m x         x      x  x      x  x      x  x            x x    "
+echo -e "\e[1;32m x         x      x  x x    x  x      x  xxxxx        xx     "
+echo -e "\e[1;32m x         x      x  x   x  x  x      x  x           x  x    "
+echo -e "\e[1;32m x         x      x  x    x x  x      x  x          x    x   "
+echo -e "\e[1;32m xxxxxxxx  xxxxxxxx  xxxxxxxx  xxxxxxxx  xxxxxxxx  x      x  "
+echo -e "                                     x                               "
+echo -e  "\e[1;32m                                                                      \e[0m"
+echo -e  "\e[1;32m                                                                      \e[0m"
+echo -e  "\e[1;32m                 (Creado por:Kevinex)    \e[0m""\e[1;30m +++++++      \e[0m"
+echo -e  "\e[1;32m               (Instagram:kevin_v.salas) \e[0m""\e[1;30m +++++++      \e[0m"
+echo -e  "\e[1;32m               (Facebook:Kevin Vargas S) \e[0m""\e[1;30m  +   +        \e[0m"
+echo -e  "\e[1;32m                                         \e[0m""\e[1;30m   ___           \e[0m"
+echo -e  "\e[1;32m                                         \e[0m""\e[1;30m  +   +        \e[0m"
+
+
+}
+
+
+
+
+
+
+
+
+restartprogram() {
+echo "Esta opcion es incorrecta elige de nuevo ! Escoge entre el [ 1-2-3 ]"
+sleep 2
+clear
+menuprincipal
+}
+
+miIP() {
+       curl -s http://ip-api.com/
+       echo "Resultado de tu IP obtenida con exito!"
+       exit
+}
+
+tarjetaip() {
+echo "Opcion 2 aceptada con exito"
+sleep 3
+read -p "Por favor ingrese la direccion IP del destino:" target
+curl -s http://ip-api.com/$target
+echo "Restultado de la direccion IP de la victima obtenida con exito!"
+exit
+}
+
+menuprincipal() {
+   clear
+      banner
+echo -e "1:Informacion de mi propia IP"
+echo -e "2:Informacion de una IP"
+echo -e "3:Salir de KevinIP "
+echo -e "Escoge una opcion del 1 al 3"
+echo -e ""
+read -p  "[+]~$ " opt
+if [ $opt -eq 1 ];
+       then
+            miIP
+elif [ $opt -eq 2 ];
+          then
+               tarjetaip
+
+elif [ $opt -eq 3 ];
+           then
+                echo -e "Gracias por usar KevinIP vuelva pronto! :)"
+                exit
+else
+        sleep1
+        restartprogram
+fi
+
+}
+
+
+
+
+
+
+menuprincipal
+
+
+
+
